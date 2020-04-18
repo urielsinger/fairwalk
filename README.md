@@ -14,6 +14,9 @@ from fairwalk import FairWalk
 
 # Create a graph
 graph = nx.fast_gnp_random_graph(n=100, p=0.5)
+n = len(graph.nodes())
+node2group = {node: group for node, group in zip(graph.nodes(), (5*np.random.random(n)).astype(int))}
+nx.set_node_attributes(graph, node2group, 'group')
 
 # Precompute probabilities and generate walks - **ON WINDOWS ONLY WORKS WITH workers=1**
 model = FairWalk(graph, dimensions=64, walk_length=30, num_walks=200, workers=4)  # Use temp_folder for big graphs
