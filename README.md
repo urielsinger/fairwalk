@@ -10,6 +10,7 @@ Python3 implementation of the fairwalk algorithm Tahleen Rahman, Bartlomiej Surm
 ## Usage
 ```python
 import networkx as nx
+import numpy as np
 from fairwalk import FairWalk
 
 # Create a graph
